@@ -1,0 +1,283 @@
+""→A
+StEq(A,y1)
+CoordOff
+AxesOn
+9→dimL X2
+9→dimL Y2
+1→X2(1):.875→X2(2):.7→X2(3):.5→X2(4):0→X2(5):–.5→X2(6):–.7→X2(7):–.875→X2(8):–1→X2(9):0→Y2(1):.5→Y2(2):.7→Y2(3):.875→Y2(4):1→Y2(5):–.875→Y2(6):–.7→Y2(7):–.5→Y2(8):0→Y2(9)
+ClLCD
+Outpt(3,5,"Unit Circle")
+Outpt(4,5,"-----------")
+Outpt(7,13,"by: q.cow")
+Lbl F
+Menu(1,"Quad1",A,2,"Quad2",B,3,"Quad3",C,4,"Quad4",D,5,"Exit",E)
+Lbl A
+0→CURRENTX
+0→xMin
+2.5→xMax
+0→yMin
+1.5→yMax
+ClDrw
+Circl(0,0,1)
+For(Q,1,5,1)
+For(Q1,–.01,.01,.01)
+For(Q2,–.01,.01,.01)
+PtOn(X2(Q)+Q2,Y2(Q)+Q1)
+End
+End
+End
+Text(1,15,"Press Exit or left/right")
+Text(10,1,"(0,1)")
+Text(57,55,"(1,0)")
+While 1
+getKy→GO
+If GO==24
+Then
+Text(20,30,"   ")
+Text(30,40,"   ")
+Text(40,50,"   ")
+If CURRENTX≤3
+Then
+CURRENTX+1→CURRENTX
+Else
+3→CURRENTX
+End
+End
+If GO==26
+Then
+Text(20,30,"   ")
+Text(30,40,"   ")
+Text(40,50,"   ")
+If CURRENTX==1
+Then
+1→CURRENTX
+Else
+CURRENTX-1→CURRENTX
+End
+End
+If CURRENTX==1
+Then
+Text(40,50,"<")
+Text(8,50,"π/6 = 30°  ")
+Text(16,50,"(√3/2,1/2)   ")
+End
+If CURRENTX==2
+Then
+Text(30,40,"<")
+Text(8,50,"π/4 = 45°  ")
+Text(16,50,"(√2/2,√2/2)   ")
+End
+If CURRENTX==3
+Then
+Text(20,30,"<")
+Text(8,50,"π/3 = 60°  ")
+Text(16,50,"(1/2,√3/2)   ")
+End
+If GO==22
+Then
+Goto F
+End
+End
+Lbl B
+0→CURRENTX
+–2.5→xMin
+0→xMax
+0→yMin
+1.5→yMax
+ClDrw
+Circl(0,0,1)
+For(Q,5,9,1)
+For(Q1,–.01,.01,.01)
+For(Q2,–.01,.01,.01)
+PtOn(X2(Q)+Q2,–Y2(Q)+Q1)
+End
+End
+End
+Text(1,15,"Press Exit or left/right")
+Text(10,110,"(0,1)")
+Text(57,55,"(–1,0)")
+While 1
+getKy→GO
+If GO==24
+Then
+Text(20,90,"   ")
+Text(30,80,"   ")
+Text(40,70,"   ")
+If CURRENTX≤3
+Then
+CURRENTX+1→CURRENTX
+Else
+3→CURRENTX
+End
+End
+If GO==26
+Then
+Text(20,90,"   ")
+Text(30,80,"   ")
+Text(40,70,"   ")
+If CURRENTX==1
+Then
+1→CURRENTX
+Else
+CURRENTX-1→CURRENTX
+End
+End
+If CURRENTX==1
+Then
+Text(20,90,">")
+Text(8,30,"2π/3 = 120°  ")
+Text(16,30,"(–1/2,√3/2)   ")
+End
+If CURRENTX==2
+Then
+Text(30,80,">")
+Text(8,30,"3π/4 = 135°  ")
+Text(16,30,"(–√2/2,√2/2)   ")
+End
+If CURRENTX==3
+Then
+Text(40,70,">")
+Text(8,30,"5π/6 = 150°  ")
+Text(16,30,"(–√3/2,1/2)   ")
+End
+If GO==22
+Then
+Goto F
+End
+End
+Goto F
+Lbl C
+0→CURRENTX
+–2.5→xMin
+0→xMax
+–1.5→yMin
+0→yMax
+ClDrw
+Circl(0,0,1)
+For(Q,9,5,–1)
+For(Q1,–.01,.01,.01)
+For(Q2,–.01,.01,.01)
+PtOn(X2(Q)+Q2,Y2(Q)+Q1)
+End
+End
+End
+Text(57,15,"Press Exit or left/right")
+Text(1,55,"(–1,0)")
+Text(45,105,"(0,–1)")
+While 1
+getKy→GO
+If GO==26
+Then
+Text(15,70,"   ")
+Text(25,80,"   ")
+Text(35,90,"   ")
+If CURRENTX≤3
+Then
+CURRENTX+1→CURRENTX
+Else
+3→CURRENTX
+End
+End
+If GO==24
+Then
+Text(15,70,"   ")
+Text(25,80,"   ")
+Text(35,90,"   ")
+If CURRENTX==1
+Then
+1→CURRENTX
+Else
+CURRENTX-1→CURRENTX
+End
+End
+If CURRENTX==1
+Then
+Text(15,70,">")
+Text(41,30,"7π/6 = 210°  ")
+Text(49,30,"(–√3/2,–1/2)   ")
+End
+If CURRENTX==2
+Then
+Text(25,80,">")
+Text(41,30,"5π/4 = 225°  ")
+Text(49,30,"(–√2/2,–√2/2)   ")
+End
+If CURRENTX==3
+Then
+Text(35,90,">")
+Text(41,30,"4π/3 = 240°  ")
+Text(49,30,"(–1/2,–√3/2)   ")
+End
+If GO==22
+Then
+Goto F
+End
+End
+Lbl D
+0→CURRENTX
+0→xMin
+2.5→xMax
+–1.5→yMin
+0→yMax
+ClDrw
+Circl(0,0,1)
+For(Q,5,1,–1)
+For(Q1,–.01,.01,.01)
+For(Q2,–.01,.01,.01)
+PtOn(X2(Q)+Q2,–Y2(Q)+Q1)
+End
+End
+End
+Text(57,15,"Press Exit or left/right")
+Text(1,55,"(1,0)")
+Text(45,1,"(0,–1)")
+While 1
+getKy→GO
+If GO==26
+Then
+Text(15,50,"   ")
+Text(25,40,"   ")
+Text(35,30,"   ")
+If CURRENTX≤3
+Then
+CURRENTX+1→CURRENTX
+Else
+3→CURRENTX
+End
+End
+If GO==24
+Then
+Text(15,50,"   ")
+Text(25,40,"   ")
+Text(35,30,"   ")
+If CURRENTX==1
+Then
+1→CURRENTX
+Else
+CURRENTX-1→CURRENTX
+End
+End
+If CURRENTX==1
+Then
+Text(35,30,"<")
+Text(41,50,"5π/3 = 300°  ")
+Text(49,50,"(1/2,–√3/2)    ")
+End
+If CURRENTX==2
+Then
+Text(25,40,"<")
+Text(41,50,"7π/4 = 315°   ")
+Text(49,50,"(√2/2,–√2/2)   ")
+End
+If CURRENTX==3
+Then
+Text(15,50,"<")
+Text(41,50,"11π/6 = 330°  ")
+Text(49,50,"(√3/2,–1/2)   ")
+End
+If GO==22
+Then
+Goto F
+End
+End
+Lbl E
